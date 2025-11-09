@@ -1,10 +1,10 @@
-import officeImage from "../../assets/images/3-2-pisarna.jpg";
+import homeImage from "../../assets/images/home.webp";
 
 const Domov = () => {
   return (
     <div id="page-domov">
       <div className="slika-levo">
-        <img src={officeImage} />
+        <img src={homeImage} />
         <div className="tekst-slika">
           <div className="tekst">
             <p>

@@ -1,7 +1,11 @@
+import logoImg from "../../assets/images/logo.svg";
+
 const Header = ({ currentContent, setCurrentContent }) => {
   return (
     <div id="header">
-      <div className="logo">Studio 9</div>
+      <div className="logo">
+        <img src={logoImg} alt="Studio9 logo" />
+      </div>
       <div className="meni">
         <ul>
           <li>

@@ -2,13 +2,13 @@
 
 #header {
   text-align: center;
-  padding: 48px 0;
+  padding: 16px 0 48px;
 }
 
 .logo {
-  font-size: 40px;
-  text-transform: uppercase;
   margin-bottom: 20px;
+  margin-inline: auto;
+  width: 360px;
 }
 
 .meni button:hover,
@@ -41,12 +41,19 @@
 
 /*  END HEADER  */
 
+#page-domov,
+#page-info,
+#projekti {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
 /*     DOMOV    */
 #page-domov {
   display: grid;
   grid-template-columns: min(100%, 400px) min(100%, 400px);
   justify-content: center;
-  gap: 32px;
+  gap: 24px;
 }
 
 #page-domov img {
@@ -58,7 +65,15 @@
 
 #page-domov .slika-levo {
   position: relative;
-  max-height: 65dvh;
+  max-height: 420px;
+}
+
+#page-domov .tekst-desno > p:first-child {
+  margin-top: 0;
+}
+
+#page-domov .tekst-desno > p:last-child {
+  margin-bottom: 0;
 }
 
 #page-domov .slika-levo .tekst-slika {
@@ -105,7 +120,7 @@
 #projekti .galerija-grid span.besedilo {
   position: absolute;
   z-index: 10;
-  font-size: 72px;
+  font-size: 92px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -207,7 +222,15 @@
 
 #page-info .slika-levo {
   position: relative;
-  max-height: 65dvh;
+  max-height: 420px;
+}
+
+#page-info .tekst-desno > p:first-child {
+  margin-top: 0;
+}
+
+#page-info .tekst-desno > p:last-child {
+  margin-bottom: 0;
 }
 
 #page-info .slika-levo .tekst-slika {
@@ -306,6 +329,10 @@
     object-fit: cover;
   }
 
+  #projekti .galerija-grid span.besedilo {
+    font-size: 72px;
+  }
+
   .projekt-more-info {
     grid-template-columns: 1fr;
   }
@@ -321,9 +348,15 @@
     object-fit: cover;
   }
 
+  .projekt-more-info .mobile-join {
+    display: flex;
+    gap: 0;
+    min-height: 90px;
+  }
+
   .projekt-number span {
-    transform: none;
     position: relative;
+    transform: rotate(-90deg) translate(-23%, -40%);
   }
 
   .projekt-text {
@@ -358,16 +391,6 @@
   .projekt-more-info .main-gallery {
     display: grid;
     grid-template-columns: 1fr;
-  }
-
-  .projekt-more-info .mobile-join {
-    display: flex;
-    gap: 0;
-    min-height: 90px;
-  }
-
-  .projekt-number span {
-    transform: rotate(-90deg) translate(-23%, -40%);
   }
 }
 
