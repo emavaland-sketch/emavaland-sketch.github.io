@@ -1,0 +1,52 @@
+const projektiData = [
+  {
+    id: 1,
+    src: "./src/assets/images/2-1-spalnica.jpg",
+    letter: "E",
+    number: 40,
+    text: `OBSTOJEČI PROSTOR OHRANI ČAJNO KUHINJO Z
+JEDILNO MIZO IN TOALETNI PROSTOR;
+DODA SE DVE DELOVNI MESTI.
+IDEJNO IZVEDBENI PROJEKT POSLOVNEGA PROSTORA
+KVADRATURA 37 M2
+ZGORNJA GORENJSKA, 2025`,
+  },
+  {
+    id: 2,
+    src: "./src/assets/images/2-2-spalnica.jpg",
+    letter: "V",
+    number: 72,
+    text: `OBSTOJEČI PROSTOR OHRANI ČAJNO KUHINJO Z
+JEDILNO MIZO IN TOALETNI PROSTOR;
+DODA SE DVE DELOVNI MESTI.
+IDEJNO IZVEDBENI PROJEKT POSLOVNEGA PROSTORA
+KVADRATURA 37 M2
+ZGORNJA GORENJSKA, 2025`,
+  },
+  {
+    id: 3,
+    src: "./src/assets/images/3-1-pisarna.jpg",
+    letter: "X",
+    number: 34,
+    text: `OBSTOJEČI PROSTOR OHRANI ČAJNO KUHINJO Z
+JEDILNO MIZO IN TOALETNI PROSTOR;
+DODA SE DVE DELOVNI MESTI.
+IDEJNO IZVEDBENI PROJEKT POSLOVNEGA PROSTORA
+KVADRATURA 37 M2
+ZGORNJA GORENJSKA, 2025`,
+  },
+  {
+    id: 4,
+    src: "./src/assets/images/3-2-pisarna.jpg",
+    letter: "S",
+    number: 37,
+    text: `OBSTOJEČI PROSTOR OHRANI ČAJNO KUHINJO Z
+JEDILNO MIZO IN TOALETNI PROSTOR;
+DODA SE DVE DELOVNI MESTI.
+IDEJNO IZVEDBENI PROJEKT POSLOVNEGA PROSTORA
+KVADRATURA 37 M2
+ZGORNJA GORENJSKA, 2025`,
+  },
+];
+
+export default projektiData;

@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "CorbelBold";
+  src: url("/src/assets/fonts/CorbelBold/CorbelBold.TTF") format("ttf"),
+    url("/src/assets/fonts/CorbelBold/CorbelBold.woff") format("woff"),
+    url("/src/assets/fonts/CorbelBold/CorbelBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CorbelLight";
+  src: url("/src/assets/fonts/CorbelLight/CorbelLight.TTF") format("ttf"),
+    url("/src/assets/fonts/CorbelLight/CorbelLight.woff") format("woff"),
+    url("/src/assets/fonts/CorbelLight/CorbelLight.woff2") format("woff2");
+}
+
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  --main-color: #b8592e;
+  font-size: 16px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1024px;
+  font-family: "CorbelLight";
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: none !important;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+img {
+  z-index: 2;
+  mix-blend-mode: difference;
+}

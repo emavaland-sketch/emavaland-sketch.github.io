@@ -1,0 +1,378 @@
+/*  HEADER  */
+
+#header {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.logo {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.meni button:hover,
+.meni button.active {
+  font-family: "CorbelBold";
+}
+
+.meni button.active,
+.logo,
+#footer {
+  color: var(--main-color);
+  mix-blend-mode: difference;
+}
+
+.meni ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-left: -16px;
+}
+
+.meni ul li button {
+  text-transform: uppercase;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: "CorbelLight";
+  min-width: 100px;
+}
+
+/*  END HEADER  */
+
+/*     DOMOV    */
+#page-domov {
+  display: grid;
+  grid-template-columns: min(100%, 400px) min(100%, 400px);
+  justify-content: center;
+  gap: 32px;
+}
+
+#page-domov img {
+  width: 100%;
+  border: 1px solid var(--main-color);
+  height: 100%;
+  object-fit: cover;
+}
+
+#page-domov .slika-levo {
+  position: relative;
+  max-height: 65dvh;
+}
+
+#page-domov .slika-levo .tekst-slika {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0;
+  background: linear-gradient(to bottom, transparent 0%, #00000091 33%);
+}
+
+#page-domov .slika-levo .tekst-slika .tekst {
+  width: 100%;
+  margin-left: auto;
+  color: white;
+  padding: 0 12px 12px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-align: right;
+}
+
+#page-domov .slika-levo .tekst-slika .tekst p:last-child {
+  margin-bottom: 0;
+}
+
+/*   END DOMOV  */
+
+/*   PROJEKTI   */
+
+#projekti .galerija-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+#projekti .galerija-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border: 1px solid var(--main-color);
+}
+
+#projekti .galerija-grid span.besedilo {
+  position: absolute;
+  z-index: 10;
+  font-size: 72px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+#projekti .galerija-grid span.stevilka {
+  position: relative;
+  top: 10px;
+}
+
+#projekti .galerija-grid > div {
+  position: relative;
+  cursor: pointer;
+  height: 200px;
+}
+
+#projekti .galerija-grid > div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background-color: #00000040;
+  transition: all 0.3s ease;
+}
+
+#projekti .galerija-grid > div:hover::after {
+  background-color: #00000080;
+}
+
+#projekti .galerija-grid > div:nth-child(4n) span.besedilo,
+#projekti .galerija-grid > div:nth-child(4n-1) span.besedilo {
+  color: white;
+}
+#projekti .galerija-grid > div:nth-child(4n-2) span.besedilo,
+#projekti .galerija-grid > div:nth-child(4n-3) span.besedilo {
+  color: var(--main-color);
+}
+
+/* END PROJEKTI */
+
+/*   PROJEKT-MORE   */
+.projekt-more-info {
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  gap: 24px;
+}
+
+.projekt-number {
+  position: relative;
+}
+
+.projekt-number span {
+  transform: rotate(-90deg) translate(60%, 10%);
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  font-size: 42px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+.projekt-text {
+  margin-top: 100px;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.projekt-more-info .main-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.projekt-more-info .main-gallery img {
+  max-height: 200px;
+  border: 1px solid var(--main-color);
+}
+/* END PROJEKT-MORE */
+
+/*     INFO     */
+
+#page-info {
+  display: grid;
+  grid-template-columns: min(100%, 400px) min(100%, 400px);
+  justify-content: center;
+  gap: 24px;
+}
+
+#page-info img {
+  width: 100%;
+  border: 1px solid var(--main-color);
+  height: 100%;
+  object-fit: cover;
+}
+
+#page-info .slika-levo {
+  position: relative;
+  max-height: 65dvh;
+}
+
+#page-info .slika-levo .tekst-slika {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0;
+  background: linear-gradient(to bottom, transparent 0%, #00000091 33%);
+}
+
+#page-info .slika-levo .tekst-slika .tekst {
+  width: 100%;
+  margin-left: auto;
+  color: white;
+  padding: 0 12px 12px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-align: right;
+}
+
+#page-info .slika-levo .tekst-slika .tekst p:last-child {
+  margin-bottom: 0;
+}
+/*   END INFO   */
+
+/*    FOOTER    */
+
+#footer {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  padding-block: 24px;
+}
+
+#footer p {
+  margin: 0;
+}
+
+/*  END FOOTER  */
+
+/* BREAKPOINTS */
+
+.home-alternativa-1 {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  * {
+    cursor: default !important;
+  }
+  .cursor-follower {
+    display: none;
+  }
+  img {
+    mix-blend-mode: normal;
+  }
+  .meni ul {
+    margin-left: 0;
+    justify-content: space-around;
+    gap: 8px;
+  }
+
+  #content {
+    padding-inline: 24px;
+  }
+
+  #page-domov,
+  #page-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #page-domov .slika-levo .tekst-slika,
+  #page-info .slika-levo .tekst-slika {
+    position: relative;
+    background: #00000080;
+    z-index: 2;
+  }
+
+  #page-domov .slika-levo .tekst-slika .tekst,
+  #page-info .slika-levo .tekst-slika .tekst {
+    padding: 12px;
+  }
+
+  #page-domov .slika-levo .tekst-slika .tekst p:first-child,
+  #page-info .slika-levo .tekst-slika .tekst p:first-child {
+    margin-top: 0;
+  }
+
+  #page-domov .slika-levo img,
+  #page-info .slika-levo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projekt-more-info {
+    grid-template-columns: 1fr;
+  }
+
+  .projekt-more-info .main-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projekt-more-info .main-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .projekt-number span {
+    transform: none;
+    position: relative;
+  }
+
+  .projekt-text {
+    margin-top: 0;
+  }
+
+  .home-alternativa-1 {
+    border-top: 2px solid red;
+  }
+
+  .home-alternativa-1 > div:first-child {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  /* TODO
+  - mobile, simplified: vse kar je med 1024 in 960 je vmesno prilagojeno
+  - vse kar je pod 960 je mobile prilagojeno
+  - info page-a: slika & tekst en nad drugmu
+  - projekti: vsak v svoji vrstici
+  - projekt-more: info in slike ena nad drugim. Slike v vrsti, ne v gridu
+  
+  */
+}
+
+@media screen and (max-width: 700px) {
+  #projekti .galerija-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projekt-more-info .main-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .projekt-more-info .mobile-join {
+    display: flex;
+    gap: 0;
+    min-height: 90px;
+  }
+
+  .projekt-number span {
+    transform: rotate(-90deg) translate(-23%, -40%);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #projekti .galerija-grid span.besedilo {
+    font-size: 58px;
+  }
+}
