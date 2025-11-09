@@ -1,8 +1,10 @@
+import officeImage from "../../assets/images/3-2-pisarna.jpg";
+
 const Domov = () => {
   return (
     <div id="page-domov">
       <div className="slika-levo">
-        <img src="./src/assets/images/3-2-pisarna.jpg" />
+        <img src={officeImage} />
         <div className="tekst-slika">
           <div className="tekst">
             <p>
