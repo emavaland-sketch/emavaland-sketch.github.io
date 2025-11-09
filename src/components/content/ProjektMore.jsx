@@ -1,7 +1,8 @@
-import projektiData from "../../assets/data/projekti";
+import projektiArray from "../../assets/data/projektiArray.js";
+import Slider from "./Slider.jsx";
 
 const ProjektMore = ({ projektId }) => {
-  const pData = projektiData.find((el) => el.id === projektId);
+  const pData = projektiArray.find((el) => el.id === projektId);
 
   return (
     <div className="projekt-more-info">
@@ -9,39 +10,35 @@ const ProjektMore = ({ projektId }) => {
         <div className="mobile-join">
           <div className="projekt-number">
             <span>
-              {pData.letter}
-              {pData.number}
+              {pData.id}
+              {pData.kvadratura}
             </span>
           </div>
           <div className="projekt-text">
-            <span>{pData.text}</span>
+            <p className="text-strong">Projektna naloga:</p>
+            <p>{pData.projektnaNaloga}</p>
+            <p className="text-strong">{pData.vrsta}</p>
+            <p className="text-strong">Kvadratura {pData.kvadratura} m2</p>
+            <p className="text-strong">
+              {pData.lokacija}, {pData.leto}
+            </p>
           </div>
         </div>
 
-        <div className="projekt-tloris">
-          <img
-            src=""
-            width="100%"
-            height="100"
-            style={{ backgroundColor: "black" }}
-          />
-        </div>
+        {pData.hasTloris && (
+          <div className="projekt-tloris">
+            <img src={`/images/${pData.id}${pData.kvadratura}/tloris.gif`} />
+          </div>
+        )}
       </div>
       <div className="main-gallery">
-        <img src="./src/assets/images/2-1-spalnica.jpg" width="300" />
-        <img src="./src/assets/images/2-1-spalnica.jpg" width="150" />
-        <img src="./src/assets/images/2-1-spalnica.jpg" width="200" />
-        <img src="./src/assets/images/2-1-spalnica.jpg" width="150" />
-        <img src="./src/assets/images/2-1-spalnica.jpg" width="150" />
-        <img src="./src/assets/images/2-1-spalnica.jpg" width="300" />
+        <Slider
+          data={pData}
+          switchAll={pData.mainImageCount < pData.staticImageCount}
+        />
       </div>
     </div>
   );
 };
 
 export default ProjektMore;
-
-/*
-TODO:
-Tu bi tut rabla vedt, če je omejeno št. slik, al če se bo slajdal v desno, kaj se zgodi ob robu...
-*/

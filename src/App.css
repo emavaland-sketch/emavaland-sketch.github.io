@@ -2,7 +2,7 @@
 
 #header {
   text-align: center;
-  padding: 16px 0 48px;
+  padding: 16px 0 32px;
 }
 
 .logo {
@@ -162,13 +162,29 @@
   color: var(--main-color);
 }
 
+#projekti .galerija-grid > div:nth-child(4n-2)::after,
+#projekti .galerija-grid > div:nth-child(4n-3)::after {
+  background-color: #ffffff9e;
+}
+
+#projekti .galerija-grid > div:nth-child(4n-2):hover::after,
+#projekti .galerija-grid > div:nth-child(4n-3):hover::after {
+  background-color: #ffffff40;
+}
+
 /* END PROJEKTI */
 
 /*   PROJEKT-MORE   */
 .projekt-more-info {
   display: grid;
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 0.5fr 1fr;
   gap: 24px;
+  position: relative;
+  left: calc(-50vw + 50%);
+  right: calc(-50vw + 50%);
+  width: 100vw;
+  padding-left: 32px;
+  padding-right: 10%;
 }
 
 .projekt-number {
@@ -179,29 +195,111 @@
   transform: rotate(-90deg) translate(60%, 10%);
   display: block;
   position: absolute;
-  bottom: 0px;
-  right: 0;
+  bottom: -18px;
+  right: -10px;
   font-size: 42px;
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
 }
 
+.projekt-tloris,
 .projekt-text {
-  margin-top: 100px;
+  text-align: right;
+}
+
+.projekt-tloris img {
+  width: auto;
+  max-height: 142px;
+  height: auto;
+}
+
+.projekt-text {
+  margin-top: 84px;
   font-size: 14px;
   line-height: 2;
+  text-transform: uppercase;
+}
+
+.projekt-text > p {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.projekt-text .text-strong {
+  font-family: "CorbelBold";
 }
 
 .projekt-more-info .main-gallery {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+}
+
+.projekt-more-info .main-gallery .images-sidebar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.projekt-more-info .main-gallery .images-sidebar img {
+  width: 110px;
+  height: auto;
+  object-fit: cover;
+}
+
+.projekt-more-info .main-gallery .images-main img {
+  width: auto;
+  height: 100%;
+  max-width: 454px;
 }
 
 .projekt-more-info .main-gallery img {
-  max-height: 200px;
   border: 1px solid var(--main-color);
+  width: 100%;
 }
+
+.images-main {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.4s ease; /* smooth slide */
+  width: 100%;
+  max-height: 454px;
+}
+
+.slider > div {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid var(--main-color);
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 0;
+  transform: scaleX(-1) translateY(-50%);
+}
+.arrow.right {
+  left: 462px;
+  mix-blend-mode: difference;
+}
+
 /* END PROJEKT-MORE */
 
 /*     INFO     */
@@ -218,6 +316,7 @@
   border: 1px solid var(--main-color);
   height: 100%;
   object-fit: cover;
+  object-position: 100% 20%;
 }
 
 #page-info .slika-levo {
@@ -293,6 +392,11 @@
     gap: 8px;
   }
 
+  .logo img {
+    width: 100%;
+    padding-inline: 20px;
+  }
+
   #content {
     padding-inline: 24px;
   }
@@ -327,6 +431,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 100% 45%;
+  }
+
+  #page-info .slika-levo img {
+    object-position: 100% 10%;
   }
 
   #projekti .galerija-grid span.besedilo {
@@ -339,13 +448,44 @@
 
   .projekt-more-info .main-gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
-  .projekt-more-info .main-gallery img {
-    width: 100%;
+  .projekt-more-info .main-gallery .images-sidebar img {
+    width: 30%;
     height: auto;
     object-fit: cover;
+  }
+
+  .images-main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .slider {
+    all: unset;
+    transform: none !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .projekt-more-info .main-gallery .images-main img {
+    max-width: 100%;
+  }
+
+  .projekt-more-info .sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
   }
 
   .projekt-more-info .mobile-join {
@@ -361,6 +501,12 @@
 
   .projekt-text {
     margin-top: 0;
+    text-align: left;
+  }
+
+  .projekt-text > p {
+    line-height: 1;
+    margin-bottom: 8px;
   }
 
   .home-alternativa-1 {
@@ -373,19 +519,19 @@
     text-align: right;
   }
 
-  /* TODO
-  - mobile, simplified: vse kar je med 1024 in 960 je vmesno prilagojeno
-  - vse kar je pod 960 je mobile prilagojeno
-  - info page-a: slika & tekst en nad drugmu
-  - projekti: vsak v svoji vrstici
-  - projekt-more: info in slike ena nad drugim. Slike v vrsti, ne v gridu
-  
-  */
+  .projekt-more-info .main-gallery .images-sidebar {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 700px) {
   #projekti .galerija-grid {
     grid-template-columns: 1fr;
+  }
+
+  #projekti .galerija-grid > div {
+    height: auto;
   }
 
   .projekt-more-info .main-gallery {
@@ -394,8 +540,58 @@
   }
 }
 
+@media screen and (max-width: 500px) {
+  .projekt-more-info .sidebar {
+    display: block;
+  }
+
+  .slider {
+    grid-template-columns: 1fr;
+  }
+
+  .projekt-tloris img {
+    width: 100%;
+    height: auto;
+    max-height: unset;
+    padding-inline: 20px;
+  }
+  .projekt-text > p {
+    margin-bottom: 12px;
+  }
+
+  .logo {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 400px) {
   #projekti .galerija-grid span.besedilo {
     font-size: 58px;
+  }
+
+  .projekt-more-info .mobile-join {
+    display: block;
+    min-height: unset;
+  }
+
+  .projekt-number {
+    margin-bottom: 8px;
+  }
+
+  .projekt-number span {
+    transform: none;
+    display: block;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    font-size: 42px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .projekt-more-info {
+    grid-template-columns: 1fr 1fr;
   }
 }

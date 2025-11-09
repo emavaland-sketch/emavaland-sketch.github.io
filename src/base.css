@@ -64,3 +64,12 @@ img {
   z-index: 2;
   mix-blend-mode: difference;
 }
+
+a.email {
+  color: black;
+  text-decoration: none;
+}
+
+.slider {
+  mix-blend-mode: difference;
+}

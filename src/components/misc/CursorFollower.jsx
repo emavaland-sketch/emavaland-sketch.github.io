@@ -15,7 +15,6 @@ export default function CursorFollower() {
       mouseX.current = e.clientX;
       mouseY.current = e.clientY;
 
-      // Black dot follows instantly
       if (dotRef.current) {
         dotRef.current.style.transform = `translate(
           ${e.clientX - 4}px,

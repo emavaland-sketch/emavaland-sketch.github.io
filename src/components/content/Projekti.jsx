@@ -1,4 +1,4 @@
-import projektiData from "../../assets/data/projekti";
+import projektiArray from "../../assets/data/projektiArray.js";
 
 const Projekti = ({ setCurrentContent, setProjektId }) => {
   const showProjektDetails = (id) => {
@@ -8,11 +8,14 @@ const Projekti = ({ setCurrentContent, setProjektId }) => {
   return (
     <div className="galerija" id="projekti">
       <div className="galerija-grid">
-        {projektiData.map(({ id, src, letter, number }) => (
+        {projektiArray.map(({ id, kvadratura }) => (
           <div key={id} onClick={() => showProjektDetails(id)}>
-            <img src={src} alt={`${letter}${number}`} />
+            <img
+              src={`/images/${id}${kvadratura}/naslovnica.webp`}
+              alt={`Naslovnica projekta ${id}${kvadratura}`}
+            />
             <span className="besedilo">
-              {letter} <span className="stevilka">{number}</span>
+              {id} <span className="stevilka">{kvadratura}</span>
             </span>
           </div>
         ))}
@@ -22,17 +25,3 @@ const Projekti = ({ setCurrentContent, setProjektId }) => {
 };
 
 export default Projekti;
-
-/* TODO: 
-
-Pretvor v seznam da ne bo copy paste
-
-- Dodana senca, da se boljše vid tekst spredaj
-- Oranžno bi blo tut kul mal updejtat
-- Na hover temnejša senca
-
-
-Ema pove:
-- Koliko projektov ma za pokazat (4?)
-- Če več, se odloči kako bodo slajdali in kam bodo usmerjeni (dol ali proti desni)
-*/

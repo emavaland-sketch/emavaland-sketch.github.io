@@ -1,9 +1,10 @@
-// Postavitev je identična Domov - premisli, če bi združila z Domov
+import infoImage from "../../assets/images/info.webp";
+
 const Info = () => {
   return (
     <div id="page-info">
       <div className="slika-levo">
-        <img src="./src/assets/images/3-2-pisarna.jpg" />
+        <img src={infoImage} />
         <div className="tekst-slika">
           <div className="tekst">
             <p>
@@ -51,7 +52,10 @@ const Info = () => {
         </p>
         <p>
           T : +386 70 135 158
-          <br />M : info@studio9.si
+          <br />M :{" "}
+          <a href="mailto:info@studio9.si" className="email">
+            info@studio9.si
+          </a>
         </p>
       </div>
     </div>
