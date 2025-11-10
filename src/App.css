@@ -37,6 +37,7 @@
   font-size: 16px;
   font-family: "CorbelLight";
   min-width: 100px;
+  color: black;
 }
 
 /*  END HEADER  */
@@ -479,6 +480,7 @@
 
   .projekt-more-info .main-gallery .images-main img {
     max-width: 100%;
+    height: auto;
   }
 
   .projekt-more-info .sidebar {
