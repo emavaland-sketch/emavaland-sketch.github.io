@@ -22,7 +22,7 @@ const Slider = ({ data, switchAll }) => {
 
   return (
     <>
-      <div className="images-sidebar">
+      <div className={`images-sidebar ${switchAll ? "desktop" : ""}`}>
         {[...Array(3)].map((_, i) => (
           <img
             key={i}
@@ -32,6 +32,18 @@ const Slider = ({ data, switchAll }) => {
           />
         ))}
       </div>
+      {switchAll && (
+        <div className="images-sidebar mobile">
+          {[...Array(data.staticImageCount)].map((_, i) => (
+            <img
+              key={i}
+              src={`/images/${data.id}${
+                data.kvadratura
+              }/static/Staticna_slika_${i + 1}.webp`}
+            />
+          ))}
+        </div>
+      )}
 
       <div className="images-main">
         <SliderArrows

@@ -242,6 +242,10 @@
   gap: 8px;
 }
 
+.projekt-more-info .main-gallery .images-sidebar.mobile {
+  display: none;
+}
+
 .projekt-more-info .main-gallery .images-sidebar img {
   width: 110px;
   height: auto;
@@ -441,6 +445,15 @@
 
   #projekti .galerija-grid span.besedilo {
     font-size: 72px;
+  }
+
+  .projekt-more-info .main-gallery .images-sidebar.mobile {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .projekt-more-info .main-gallery .images-sidebar.desktop {
+    display: none;
   }
 
   .projekt-more-info {
