@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import SliderArrows from "./SliderArrows";
+import ImageWithFallback from "../misc/ImageWithFallback";
 
 const Slider = ({ data, switchAll }) => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -15,7 +16,6 @@ const Slider = ({ data, switchAll }) => {
   };
 
   useEffect(() => {
-    console.log(sliderRef.current);
     if (sliderRef.current) {
       sliderRef.current.style.transform = `translateX(-${
         (currentIndex - 1) * 524
@@ -27,22 +27,32 @@ const Slider = ({ data, switchAll }) => {
     <>
       <div className={`images-sidebar ${switchAll ? "desktop" : ""}`}>
         {[...Array(3)].map((_, i) => (
-          <img
+          <ImageWithFallback
             key={i}
-            src={`/images/${data.id}${data.kvadratura}/static/Staticna_slika_${
+            imgSrc={`/images/${data.id}${
+              data.kvadratura
+            }/static/Staticna_slika_${
               switchAll ? currentSideIndex + i : i + 1
             }.webp`}
+            alt={`Predogled projekta ${data.id}${data.kvadratura}`}
+            width="110px"
+            height="150px"
           />
         ))}
       </div>
       {switchAll && (
         <div className="images-sidebar mobile">
           {[...Array(data.staticImageCount)].map((_, i) => (
-            <img
+            <ImageWithFallback
               key={i}
-              src={`/images/${data.id}${
+              imgSrc={`/images/${data.id}${
                 data.kvadratura
-              }/static/Staticna_slika_${i + 1}.webp`}
+              }/static/Staticna_slika_${
+                switchAll ? currentSideIndex + i : i + 1
+              }.webp`}
+              alt={`Predogled projekta ${data.id}${data.kvadratura}`}
+              width="110px"
+              height="150px"
             />
           ))}
         </div>
@@ -58,17 +68,14 @@ const Slider = ({ data, switchAll }) => {
         <div className="slider" ref={sliderRef}>
           {[...Array(data.mainImageCount)].map((_, i) => (
             <div>
-              <img
+              <ImageWithFallback
                 key={i}
-                src={`/images/${data.id}${data.kvadratura}/main/Slika_${
+                imgSrc={`/images/${data.id}${data.kvadratura}/main/Slika_${
                   i + 1
                 }.webp`}
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = `/images/${data.id}${
-                    data.kvadratura
-                  }/main/Slika_${i + 1}.gif`;
-                }}
+                alt={`Predogled projekta ${data.id}${data.kvadratura}`}
+                width="450"
+                height="400"
               />
             </div>
           ))}

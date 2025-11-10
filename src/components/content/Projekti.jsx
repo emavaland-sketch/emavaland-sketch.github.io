@@ -1,4 +1,5 @@
 import projektiArray from "../../assets/data/projektiArray.js";
+import ImageWithFallback from "../misc/ImageWithFallback.jsx";
 
 const Projekti = ({ setCurrentContent, setProjektId }) => {
   const showProjektDetails = (id) => {
@@ -10,9 +11,10 @@ const Projekti = ({ setCurrentContent, setProjektId }) => {
       <div className="galerija-grid">
         {projektiArray.map(({ id, kvadratura }) => (
           <div key={id} onClick={() => showProjektDetails(id)}>
-            <img
-              src={`/images/${id}${kvadratura}/naslovnica.webp`}
+            <ImageWithFallback
+              imgSrc={`/images/${id}${kvadratura}/naslovnica.webp`}
               alt={`Naslovnica projekta ${id}${kvadratura}`}
+              height="100%"
             />
             <span className="besedilo">
               {id} <span className="stevilka">{kvadratura}</span>

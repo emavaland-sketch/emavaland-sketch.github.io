@@ -1,10 +1,15 @@
 import homeImage from "../../assets/images/home.webp";
+import ImageWithFallback from "../misc/ImageWithFallback";
 
 const Domov = () => {
   return (
     <div id="page-domov">
       <div className="slika-levo">
-        <img src={homeImage} />
+        <ImageWithFallback
+          imgSrc={homeImage}
+          alt="Naslovnica strani Domov"
+          height="100%"
+        />
         <div className="tekst-slika">
           <div className="tekst">
             <p>

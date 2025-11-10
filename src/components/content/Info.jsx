@@ -1,10 +1,15 @@
 import infoImage from "../../assets/images/info.webp";
+import ImageWithFallback from "../misc/ImageWithFallback";
 
 const Info = () => {
   return (
     <div id="page-info">
       <div className="slika-levo">
-        <img src={infoImage} />
+        <ImageWithFallback
+          imgSrc={infoImage}
+          alt="Naslovnica strani Info"
+          height="100%"
+        />
         <div className="tekst-slika">
           <div className="tekst">
             <p>

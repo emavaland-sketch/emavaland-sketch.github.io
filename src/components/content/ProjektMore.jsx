@@ -1,4 +1,5 @@
 import projektiArray from "../../assets/data/projektiArray.js";
+import ImageWithFallback from "../misc/ImageWithFallback.jsx";
 import Slider from "./Slider.jsx";
 
 const ProjektMore = ({ projektId }) => {
@@ -27,7 +28,13 @@ const ProjektMore = ({ projektId }) => {
 
         {pData.hasTloris && (
           <div className="projekt-tloris">
-            <img src={`/images/${pData.id}${pData.kvadratura}/tloris.gif`} />
+            <ImageWithFallback
+              imgSrc={`/images/${pData.id}${pData.kvadratura}/tloris.gif`}
+              alt={`Tloris projekta ${pData.id}${pData.kvadratura}`}
+              width="150px"
+              height="150px"
+              marginLeft={"auto"}
+            />
           </div>
         )}
       </div>
