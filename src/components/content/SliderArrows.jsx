@@ -4,7 +4,7 @@ const SliderArrows = ({ currentIndex, scroll, maximum }) => {
       {currentIndex > 1 && (
         <button onClick={() => scroll(-1)} className="arrow left"></button>
       )}
-      {currentIndex < maximum && (
+      {currentIndex <= maximum && (
         <button onClick={() => scroll(1)} className="arrow right"></button>
       )}
     </>

@@ -8,15 +8,18 @@ const Slider = ({ data, switchAll }) => {
 
   const scroll = (direction) => {
     const newIndex = currentIndex + direction;
-    if (newIndex >= 1 && newIndex < data.mainImageCount) {
+    if (newIndex >= 1 && newIndex <= data.mainImageCount) {
       setCurrentIndex(newIndex);
-      setCurrentSideIndex(newIndex * 3);
+      setCurrentSideIndex((newIndex - 1) * 3 + 1);
     }
   };
 
   useEffect(() => {
+    console.log(sliderRef.current);
     if (sliderRef.current) {
-      sliderRef.current.style.transform = `translateX(-${currentIndex * 100}%)`;
+      sliderRef.current.style.transform = `translateX(-${
+        (currentIndex - 1) * 524
+      }px)`;
     }
   }, [currentIndex]);
 
